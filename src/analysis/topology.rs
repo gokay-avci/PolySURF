@@ -63,7 +63,7 @@ impl VoidCrawler {
         }
 
         // Sort by Z center for the sweep-line algorithm
-        projections.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap_or(Ordering::Equal));
+        projections.sort_by(|a, b| a.0.total_cmp(&b.0));
 
         Self {
             projections,
@@ -85,7 +85,7 @@ impl VoidCrawler {
             .collect();
 
         // Sort by start point
-        intervals.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap_or(Ordering::Equal));
+        intervals.sort_by(|a, b| a.0.total_cmp(&b.0));
 
         let mut merged = Vec::new();
         if let Some(first) = intervals.first() {
@@ -134,7 +134,7 @@ impl VoidCrawler {
         }
 
         // Sort by gap size descending (Best first)
-        cuts.sort_by(|a, b| b.gap_size.partial_cmp(&a.gap_size).unwrap_or(Ordering::Equal));
+        cuts.sort_by(|a, b| b.gap_size.total_cmp(&a.gap_size));
         
         cuts
     }
