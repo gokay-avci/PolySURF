@@ -83,3 +83,54 @@ pub fn reduce_2d_integer(mut u: Vector3<i32>, mut v: Vector3<i32>) -> (Vector3<i
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use nalgebra::Vector3;
+
+    #[test]
+    fn test_reduce_2d_already_reduced() {
+        let u = Vector3::new(1, 0, 0);
+        let v = Vector3::new(0, 1, 0);
+        let (u_res, v_res) = reduce_2d_integer(u, v);
+        assert_eq!(u_res, u);
+        assert_eq!(v_res, v);
+    }
+
+    #[test]
+    fn test_reduce_2d_needs_swap() {
+        let u = Vector3::new(0, 2, 0);
+        let v = Vector3::new(1, 0, 0);
+        let (u_res, v_res) = reduce_2d_integer(u, v);
+        assert_eq!(u_res, Vector3::new(1, 0, 0));
+        assert_eq!(v_res, Vector3::new(0, 2, 0));
+    }
+
+    #[test]
+    fn test_reduce_2d_zero_vector() {
+        let u = Vector3::new(0, 0, 0);
+        let v = Vector3::new(1, 1, 1);
+        let (u_res, v_res) = reduce_2d_integer(u, v);
+        assert_eq!(u_res, Vector3::new(0, 0, 0));
+        assert_eq!(v_res, Vector3::new(1, 1, 1));
+    }
+
+    #[test]
+    fn test_reduce_2d_simple_reduction() {
+        let u = Vector3::new(1, 0, 0);
+        let v = Vector3::new(10, 2, 0);
+        let (u_res, v_res) = reduce_2d_integer(u, v);
+        assert_eq!(u_res, Vector3::new(1, 0, 0));
+        assert_eq!(v_res, Vector3::new(0, 2, 0));
+    }
+
+    #[test]
+    fn test_reduce_2d_collinear() {
+        let u = Vector3::new(1, 0, 0);
+        let v = Vector3::new(2, 0, 0);
+        let (u_res, v_res) = reduce_2d_integer(u, v);
+        assert_eq!(u_res, Vector3::new(0, 0, 0));
+        assert_eq!(v_res, Vector3::new(1, 0, 0));
+    }
+}
