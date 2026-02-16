@@ -1,0 +1,5 @@
+[Fe]12[O]3[Fe]4[O]1[Fe]3[O]24.[O-]C(=O)[C]=[C]C(=O)[O-] MOFid-v1.acs.cat0.NO_REF;01_MIL-88
+[O-]C(=O)C1=NN=C([CH]1)C(=O)[O-].[O-]C(=O)C1=N[N]C(=C1)C(=O)[O-].[O-]C(=O)[C]1N=NC(=C1)C(=O)[O-].[O]12[Zr]34[OH]5[Zr]62[OH]2[Zr]71[OH]4[Zr]14[O]3[Zr]35[O]6[Zr]2([O]71)[OH]43 MOFid-v1.bct.cat0.NO_REF;07_MOF-802
+[O-]C(=O)C1=[C][C]=C([C]=[C]1)C(=O)[O-].[O]12[Zr]34[O]5[Zr]62[O]2[Zr]71[O]4[Zr]14[O]3[Zr]35[O]6[Zr]2([O]71)[O]43 MOFid-v1.fcu.cat0.NO_REF;16_UiO-66
+[O-]C(=O)c1ccc(cc1)c1ccc(cc1)c1cc(cc(c1)c1ccc(cc1)c1ccc(cc1)C(=O)[O-])c1ccc(cc1)c1ccc(cc1)C(=O)[O-].[O-]C(=O)c1ccc(s1)C(=O)[O-].[Zn] MOFid-v1.ERROR.cat2.NO_REF;29_DUT_42_metal_swap
+[O-]C(=O)c1cc([N][N]c2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-].[O][Fe][O]([Fe][O])[Fe][O] MOFid-v1.soc,edq.cat0.NO_REF;80_PCN-250
