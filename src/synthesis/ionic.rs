@@ -26,7 +26,7 @@ impl IonicReconstructor {
         indices.sort_by(|&i, &j| {
             let z_i = lattice.to_cartesian(&atoms[i].fractional_coords).z;
             let z_j = lattice.to_cartesian(&atoms[j].fractional_coords).z;
-            z_i.partial_cmp(&z_j).unwrap()
+            z_i.total_cmp(&z_j)
         });
 
         // Robust Plane Clustering
